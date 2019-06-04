@@ -1,12 +1,11 @@
 import numpy as np
-import scipy.special 
 
 
 
 class NN_Classifier:
 
     
-    sigmoid = lambda self, x: scipy.special.expit(x)
+    sigmoid = lambda self, x: 1 / (1 + np.exp(-x))
     softmax = lambda self, x: np.exp(x - np.max(x)) / np.exp(x - np.max(x)).sum(axis=0)
     
     
